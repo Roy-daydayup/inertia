@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.inertia</groupId>
+    <artifactId>inertia</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <spring.boot.version>2.1.8.RELEASE</spring.boot.version>
+        <lombok.version>1.18.12</lombok.version>
+        <spring.cloud.version>Greenwich.SR3</spring.cloud.version>
+<!--        <project.version>1.0.0.RELEASE</project.version>-->
+    </properties>
+
+    <modules>
+        <module>inertia-demo</module>
+        <module>inertia-core</module>
+        <module>inertia-registry</module>
+        <module>inertia-starter</module>
+<!--        <module>inertia-starter-core</module>-->
+        <!--        <module>inertia-registry-consul</module>-->
+    </modules>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--管理各模块核心-->
+            <dependency>
+                <groupId>com.inertia</groupId>
+                <artifactId>inertia-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.inertia</groupId>
+                <artifactId>inertia-registry-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.inertia</groupId>
+                <artifactId>inertia-registry-consul</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.inertia</groupId>
+                <artifactId>inertia-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.inertia</groupId>
+                <artifactId>inertia-starter-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>org.projectlombok</groupId>-->
+<!--                <artifactId>lombok</artifactId>-->
+<!--                <version>1</version>-->
+<!--            </dependency>-->
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>
